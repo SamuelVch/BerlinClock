@@ -3,12 +3,18 @@
 
 class BerlinClock
 {
+    private $arrayMinutes = [];
 
     public function translate(int $int): array
     {
-        if($int === 2) return ["yellow", "yellow"];
-        if($int === 3) return ["yellow", "yellow", "yellow"];
+        return $this->createTableSimpleMinute($int);
+    }
 
-        return ["yellow"];
+    public function createTableSimpleMinute(int $int): array
+    {
+        for ($i = 0; $i < $int; $i++) {
+            $this->arrayMinutes[$i] = "yellow";
+        }
+        return $this->arrayMinutes;
     }
 }
