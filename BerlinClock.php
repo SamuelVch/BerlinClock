@@ -10,6 +10,11 @@ class BerlinClock
         return $this->createTableSimpleMinute($int);
     }
 
+    public function translate5Minutes(int $int): array
+    {
+        return ["yellow"];
+    }
+
     public function createTableSimpleMinute(int $int): array
     {
         for ($i = 0; $i < $int; $i++) {
