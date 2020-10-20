@@ -12,6 +12,7 @@ class BerlinClock
 
     public function translate5Minutes(int $int): array
     {
+        if($int >= 15) return ["yellow", "yellow", "red"];
         if($int >= 10) return ["yellow", "yellow"];
 
         return ["yellow"];
