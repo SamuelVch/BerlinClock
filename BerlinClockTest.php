@@ -34,6 +34,12 @@ class BerlinClockTest extends TestCase
         $this->assertEquals(["yellow", "yellow"], $actual);
     }
 
+    public function test_translate_given3_shouldReturn3Yellow() {
+        $actual = $this->actTranslate(3);
+
+        $this->assertEquals(["yellow", "yellow", "yellow"], $actual);
+    }
+
     public function actTranslate(int $int)
     {
         return $this->berlinClock->translate($int);
