@@ -17,6 +17,11 @@ class BerlinClock
         return  $this->createTable5Minutes($nbrIteration);
     }
 
+    public function translateHour(int $int): array
+    {
+        return ["red"];
+    }
+
     public function createTableSimpleMinute(int $int): array
     {
         for ($i = 0; $i < $int; $i++) {
