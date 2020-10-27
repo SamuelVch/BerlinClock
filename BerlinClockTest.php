@@ -25,69 +25,69 @@ class BerlinClockTest extends TestCase
     public function test_translate_given1_shouldReturn1Yellow() {
         $actual = $this->actTranslate(1);
 
-        $this->assertEquals(["yellow"], $actual);
+        $this->assertEquals(["yellow", "black", "black", "black"], $actual);
     }
 
     public function test_translate_given2_shouldReturn2Yellow() {
         $actual = $this->actTranslate(2);
 
-        $this->assertEquals(["yellow", "yellow"], $actual);
+        $this->assertEquals(["yellow", "yellow","black", "black"], $actual);
     }
 
     public function test_translate_given3_shouldReturn3Yellow() {
         $actual = $this->actTranslate(3);
 
-        $this->assertEquals(["yellow", "yellow", "yellow"], $actual);
+        $this->assertEquals(["yellow", "yellow", "yellow", "black"], $actual);
     }
 
     public function test_translate5Minutes_given5_shouldReturn1Yellow() {
         $actual = $this->actTranslate5Minutes(5);
 
-        $this->assertEquals(["yellow"], $actual);
+        $this->assertEquals(["yellow", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black"], $actual);
     }
 
     public function test_translate5Minutes_given10_shouldReturn2Yellow()
     {
         $actual = $this->actTranslate5Minutes(10);
 
-        $this->assertEquals(["yellow", "yellow"], $actual);
+        $this->assertEquals(["yellow", "yellow", "black", "black", "black", "black", "black", "black", "black", "black", "black"], $actual);
     }
 
     public function test_translate5Minutes_given11_shouldReturn2Yellow() {
         $actual = $this->actTranslate5Minutes(11);
 
-        $this->assertEquals(["yellow", "yellow"], $actual);
+        $this->assertEquals(["yellow", "yellow", "black", "black", "black", "black", "black", "black", "black", "black", "black"], $actual);
     }
 
     public function test_translate5Minutes_given15_shouldReturn2Yellow1Red() {
         $actual = $this->actTranslate5Minutes(15);
 
-        $this->assertEquals(["yellow", "yellow" ,"red"], $actual);
+        $this->assertEquals(["yellow", "yellow" ,"red", "black", "black", "black", "black", "black", "black", "black", "black"], $actual);
     }
 
     public function test_translateHour_given1_shouldReturn1Red() {
         $actual = $this->actTranslateHour(1);
         
-        $this->assertEquals(["red"], $actual);
+        $this->assertEquals(["red", "black", "black", "black"], $actual);
 
     }
 
     public function test_translateHour_given2_shouldReturn2Red() {
         $actual = $this->actTranslateHour(2);
 
-        $this->assertEquals(["red", "red"], $actual);
+        $this->assertEquals(["red", "red", "black", "black"], $actual);
     }
 
     public function test_translateHour_given3_shouldReturn3Red() {
         $actual = $this->actTranslateHour(3);
 
-        $this->assertEquals(["red", "red", "red"], $actual);
+        $this->assertEquals(["red", "red", "red", "black"], $actual);
     }
 
     public function test_translate5Hours_given5_shouldReturn1Red() {
         $actual = $this->actTranslate5Hours(5);
 
-        $this->assertEquals(["red"], $actual);
+        $this->assertEquals(["red", "black", "black", "black"], $actual);
     }
 
     public function actTranslate(int $int)

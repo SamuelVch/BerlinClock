@@ -3,9 +3,9 @@
 
 class BerlinClock
 {
-    private $arrayMinutes = [];
-    private $array5Minutes = [];
-    private $arrayHours = [];
+    private $arrayMinutes = ["black", "black", "black", "black"];
+    private $array5Minutes = ["black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black"];
+    private $arrayHours = ["black", "black", "black", "black"];
 
     public function translate(int $int): array
     {
@@ -25,24 +25,28 @@ class BerlinClock
 
     public function translate5Hours(int $int): array
     {
-        return ["red"];
+        return ["red","black", "black", "black"];
     }
 
     public function createTableSimpleMinute(int $int): array
     {
-        for ($i = 0; $i < $int; $i++) {
-            $this->arrayMinutes[$i] = "yellow";
+        for ($i = 0; $i < 4; $i++) {
+            if ($i < $int) {
+                $this->arrayMinutes[$i] = "yellow";
+            }
         }
         return $this->arrayMinutes;
     }
 
     public function createTable5Minutes(int $nbrIteration): array
     {
-        for ($i = 0; $i < $nbrIteration; $i++) {
-            if (($i + 1) % 3 === 0) {
-                $this->array5Minutes[$i] = "red";
-            } else {
-                $this->array5Minutes[$i] = "yellow";
+        for ($i = 0; $i < 11; $i++) {
+            if($i < $nbrIteration) {
+                if (($i + 1) % 3 === 0) {
+                    $this->array5Minutes[$i] = "red";
+                } else {
+                    $this->array5Minutes[$i] = "yellow";
+                }
             }
         }
         return $this->array5Minutes;
@@ -50,8 +54,10 @@ class BerlinClock
 
     public function createTableSimpleHour(int $int): array
     {
-        for($i = 0; $i < $int; $i++) {
-            $this->arrayHours[$i] = "red";
+        for($i = 0; $i < 4; $i++) {
+            if($i < $int) {
+                $this->arrayHours[$i] = "red";
+            }
         }
         return $this->arrayHours;
     }
