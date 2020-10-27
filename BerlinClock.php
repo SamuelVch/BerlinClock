@@ -20,6 +20,7 @@ class BerlinClock
     public function translateHour(int $int): array
     {
         if($int === 2) return ["red", "red"];
+        if($int === 3) return ["red", "red", "red"];
 
         return ["red"];
     }
