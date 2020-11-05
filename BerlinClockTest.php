@@ -120,6 +120,14 @@ class BerlinClockTest extends TestCase
         $this->assertEquals(["red"],$actual);
     }
 
+    public function test_translateAllClock_given00h00m00shouldReturn1Red(){
+        $input = '00:00:00';
+        $date = strtotime($input);
+        $actual = $this->actTranslateAllClock($date);
+
+        $this->assertEquals(["red","black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black"],$actual);
+    }
+
     public function actTranslate(int $int)
     {
         return $this->berlinClock->translate($int);
@@ -142,4 +150,10 @@ class BerlinClockTest extends TestCase
     {
         return $this->berlinClock->translateSeconds($int);
     }
+
+    public function actTranslateAllClock(int $date)
+    {
+        return $this->berlinClock->translateAllClock($date);
+    }
+
 }

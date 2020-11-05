@@ -7,6 +7,7 @@ class BerlinClock
     private $array5Minutes = ["black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black"];
     private $arrayHours = ["black", "black", "black", "black"];
     private $array5Hours = ["black", "black", "black", "black"];
+    private $arrayAllClock = ["black","black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black"];
 
     public function translate(int $int): array
     {
@@ -34,6 +35,12 @@ class BerlinClock
     {
         if($int % 2 == 0 ) return ["red"];
         return ["black"];
+    }
+
+    public function translateAllClock(int $date){
+
+
+        return ["red","black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black"];
     }
 
     public function createTableSimpleMinute(int $int): array
