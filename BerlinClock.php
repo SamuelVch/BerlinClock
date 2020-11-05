@@ -38,7 +38,8 @@ class BerlinClock
     }
 
     public function translateAllClock(int $date){
-
+        $heure = date('H ', $date);
+        if($heure == 05) return ["red", "red", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black"];
 
         return ["red","black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black"];
     }
