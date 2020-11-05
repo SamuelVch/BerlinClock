@@ -32,6 +32,7 @@ class BerlinClock
 
     public function translateSeconds(int $int): array
     {
+        if($int === 1) return ["black"];
         return ["red"];
     }
 
