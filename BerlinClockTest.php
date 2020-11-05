@@ -136,6 +136,14 @@ class BerlinClockTest extends TestCase
         $this->assertEquals(["red", "red", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black"], $actual);
     }
 
+    public function test_translateAllClock_given18h07m00shouldReturn7RedAnd3Yellow(){
+        $input = '18:07:00';
+        $date = strtotime($input);
+        $actual = $this->actTranslateAllClock($date);
+
+        $this->assertEquals(["red", "red", "red", "red", "black", "red", "red", "red", "black", "yellow", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "yellow", "yellow", "black", "black"],$actual);
+    }
+
     public function actTranslate(int $int)
     {
         return $this->berlinClock->translate($int);
